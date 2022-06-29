@@ -9,8 +9,8 @@
                     <p class="question-box__question">{{state.currentQuestion.question}}</p>
                 </div>
                 <div class="question-box__answers">
-                    <div class="answer" @click="setAnswer('True')">True</div>
-                    <div class="answer" @click="setAnswer('False')">False</div>
+                    <div class="answer" :class="{'answer--selected': answered?.answer === 'True'}" @click="setAnswer('True')">True</div>
+                    <div class="answer" :class="{'answer--selected': answered?.answer === 'False'}" @click="setAnswer('False')">False</div>
                 </div>
                 <div class="question-box__controls">
                     <btn :disabled="state.questionIndex === 0" :lite="true" @click="prevQuestion()">Back</btn>
