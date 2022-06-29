@@ -1,0 +1,19 @@
+.splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+
+    p{
+        color: rgb(222, 71, 176);
+        font-weight: 700;
+        font-style: italic;
+        font-size: 2vw;
+    }
+}

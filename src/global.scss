@@ -1,0 +1,43 @@
+html {
+    font-size: 18px;
+
+    @media only screen and (max-width: 1200px) {
+        font-size: 24px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        font-size: 18px;
+    }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2vh 2vw;
+    color: #2c3e50;
+    background: url('./assets/space.jpg');
+    background-size: cover;
+}
+
+.app-view{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+}

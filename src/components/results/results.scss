@@ -1,0 +1,27 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .row {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        border-bottom: solid #874782 2px;
+
+        &:last-child {
+            border: none;
+        }
+
+        &__column{
+            width: 100%;
+            color: #fff;
+            font-weight: 700;
+            padding: 1vh 0;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.view-quiz {
+    
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: #f7f7f7;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .question-box {
+            width: 30vw;
+
+            @media only screen and (max-width: 1200px) {
+                width: 70vw;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                width: 90vw;
+            }
+
+            &__question {
+                
+                p {
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+            }
+
+            &__controls, &__answers {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &__answers {
+                margin-bottom: 3vh;
+            }
+
+            .answer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10vw;
+                height: 10vw;
+                border-radius: 10px;
+                color: #fff;
+                font-weight: 700;
+                background: #3be0d4;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #44fddf, #3be0d4);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #44fddf, #3be0d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                cursor: pointer;
+
+                @media only screen and (max-width: 1200px) {
+                    width: 35vw;
+                    height: 35vw;
+                }
+    
+                @media only screen and (max-width: 600px) {
+                    width: 40vw;
+                    height: 40vw;
+                }
+
+                &--selected {
+                    border: none;
+                    outline: none;
+                    box-shadow: 0px 0px 10px 5px #0ff;
+                }
+            }
+        }
+
+        .btn {
+            margin: 0 auto;
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+            }
+        }
+    }
+}

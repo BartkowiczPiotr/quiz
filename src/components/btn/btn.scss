@@ -1,0 +1,22 @@
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: #fba283;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f8217c, #fba283);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f8217c, #fba283); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+
+    &--disabled {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    &--lite{
+        background: transparent;
+        border: 2px #f8217c solid;
+    }
+}

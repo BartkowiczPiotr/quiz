@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <router-view v-if="sessionToken"/>
+    <splash v-if="loading" />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup lang="ts">
+import { onMounted, computed } from 'vue';
+import splash from '@/components/splash/splash.vue';
+import { getToken } from '@/services/trivia.service';
+import { useStore } from 'vuex';
 
-nav {
-  padding: 30px;
+const store = useStore();
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+const loading = computed(() => store.state.globalLoading);
+const sessionToken = computed(() => store.state.sessionToken);
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+onMounted(() => {
+    store.dispatch('toggleGlobalLoading', true);
+
+    getToken().then((response) => {
+        store.dispatch('setToken', response.data.token);
+    }).finally(() => {
+        store.dispatch('toggleGlobalLoading', false);
+    });
+});
+</script>
+
+<style lang="scss" src="./global.scss"/>
